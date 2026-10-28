@@ -1,41 +1,167 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi primera página</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f2f5f9;
-      color: #1d3557;
-      padding: 60px 20px;
-    }
-    .tarjeta {
-      background: white;
-      max-width: 600px;
-      margin: auto;
-      padding: 35px;
-      border-radius: 16px;
-      box-shadow: 0 5px 20px #0001;
-    }
-    a {
-      display: inline-block;
-      background: #1769ff;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iconectando | Tecnología que conecta</title>
+<meta name="description" content="iconectando: soluciones tecnológicas para conectar tu negocio con sus clientes.">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bosque:#0e2a1b; --hoja:#1d5a2e; --lima:#b4dc45; --turquesa:#2bbfb0;
+  --violeta:#5b3fa0; --naranja:#f08a3c; --papel:#f4f8ee; --texto:#18281d;
+  --max:1080px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,sans-serif;color:var(--texto);background:var(--papel);line-height:1.65;font-size:1.0625rem}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--naranja);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+
+/* Cabecera */
+header{position:sticky;top:0;z-index:10;background:rgba(14,42,27,.94);backdrop-filter:blur(8px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;padding-bottom:.6rem}
+.marca{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--papel);font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.3rem}
+.marca img{width:40px;height:40px;border-radius:50%}
+nav{display:flex;gap:1.4rem}
+nav a{color:var(--papel);text-decoration:none;font-weight:500;font-size:.98rem}
+nav a:hover{color:var(--lima)}
+
+/* Hero: facetas de cristal como en el logotipo */
+.hero{background:var(--bosque);color:var(--papel);position:relative;overflow:hidden;padding:5rem 0 6rem}
+.hero::before,.hero::after{content:"";position:absolute;z-index:0}
+.hero::before{width:620px;height:620px;right:-140px;top:-120px;background:var(--hoja);clip-path:polygon(50% 0,100% 38%,82% 100%,18% 100%,0 38%);opacity:.55}
+.hero::after{width:360px;height:360px;left:-100px;bottom:-140px;background:var(--violeta);clip-path:polygon(0 0,100% 30%,60% 100%);opacity:.5}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800}
+.hero p{margin-top:1.4rem;max-width:34rem;font-size:1.2rem;color:#d8e8d0}
+.botones{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+.btn{display:inline-block;padding:.8rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;background:var(--lima);color:var(--bosque);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.sec{background:transparent;color:var(--papel);box-shadow:inset 0 0 0 2px var(--turquesa)}
+.logo-grande{justify-self:center;width:min(100%,400px);aspect-ratio:1;border-radius:50%;box-shadow:0 0 0 10px rgba(180,220,69,.16),0 0 80px rgba(43,191,176,.35);animation:entrada 1s ease-out both}
+@keyframes entrada{from{opacity:0;transform:scale(.92) rotate(-4deg)}to{opacity:1;transform:none}}
+
+/* Secciones */
+section{padding:5rem 0}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;max-width:22ch}
+.intro{margin-top:1rem;max-width:40rem;color:#3d5444}
+
+/* Servicios: bloques de ancho distinto, cada uno con el color de una faceta del logo */
+.servicios{display:grid;grid-template-columns:repeat(6,1fr);gap:1.2rem;margin-top:2.5rem}
+.servicio{padding:1.8rem;border-radius:6px 28px 6px 28px}
+.servicio h3{font-size:1.3rem;margin-bottom:.5rem}
+.servicio:nth-child(1){grid-column:span 3;background:var(--turquesa);color:var(--bosque)}
+.servicio:nth-child(2){grid-column:span 3;background:var(--violeta);color:var(--papel)}
+.servicio:nth-child(3){grid-column:span 2;background:var(--naranja);color:var(--bosque)}
+.servicio:nth-child(4){grid-column:span 2;background:var(--lima);color:var(--bosque)}
+.servicio:nth-child(5){grid-column:span 2;background:var(--hoja);color:var(--papel)}
+
+/* Nosotros */
+.nosotros{background:#e6efdc}
+.nosotros .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.nosotros p+p{margin-top:1rem}
+
+/* Contacto */
+.contacto{background:var(--bosque);color:var(--papel);text-align:center}
+.contacto h2{margin:0 auto}
+.contacto .intro{margin:1rem auto 2rem;color:#d8e8d0}
+footer{background:#081a10;color:#9db8a4;text-align:center;padding:1.5rem;font-size:.9rem}
+
+@media (max-width:760px){
+  nav{gap:.9rem}
+  .hero .wrap,.nosotros .wrap{grid-template-columns:1fr}
+  .logo-grande{order:-1;width:min(70%,260px)}
+  .servicio:nth-child(n){grid-column:span 6}
+  section{padding:3.5rem 0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.logo-grande{animation:none}.btn{transition:none}
+}
+</style>
 </head>
 <body>
-  <div class="tarjeta">
-    <h1>¡Bienvenido a mi página!</h1>
-    <p>Mi sitio web está publicado en GitHub Pages.</p>
-    <a href="https://github.com/">Conocer GitHub</a>
+
+<header>
+  <div class="wrap">
+    <a class="marca" href="#inicio"><img src="logo.jpg" alt="">iconectando</a>
+    <nav aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Tecnología que conecta tu negocio con las personas</h1>
+        <p>En iconectando creamos soluciones digitales a la medida para que tu empresa se comunique mejor, trabaje más fácil y crezca.</p>
+        <div class="botones">
+          <a class="btn" href="#contacto">Hablemos de tu proyecto</a>
+          <a class="btn sec" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+      <img class="logo-grande" src="logo.jpg" alt="Logotipo de iconectando: un robot sonriente de cristales de colores rodeado de íconos de conexión">
+    </div>
+  </div>
+
+  <section id="servicios">
+    <div class="wrap">
+      <h2>Lo que hacemos por tu empresa</h2>
+      <p class="intro">Estas son áreas de ejemplo; las ajustaremos a tus servicios reales.</p>
+      <div class="servicios">
+        <article class="servicio">
+          <h3>Sitios y aplicaciones web</h3>
+          <p>Páginas rápidas y claras que presentan tu empresa y atraen clientes.</p>
+        </article>
+        <article class="servicio">
+          <h3>Automatización e inteligencia artificial</h3>
+          <p>Asistentes y procesos automáticos que ahorran tiempo a tu equipo.</p>
+        </article>
+        <article class="servicio">
+          <h3>Chatbots</h3>
+          <p>Atención a clientes en cualquier momento, por web o mensajería.</p>
+        </article>
+        <article class="servicio">
+          <h3>Integración de sistemas</h3>
+          <p>Conectamos las herramientas que ya usas para que trabajen juntas.</p>
+        </article>
+        <article class="servicio">
+          <h3>Asesoría tecnológica</h3>
+          <p>Te ayudamos a elegir la tecnología adecuada para tu etapa.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros" class="nosotros">
+    <div class="wrap">
+      <h2>Una empresa tecnológica con trato cercano</h2>
+      <div>
+        <p>iconectando nace para acercar la tecnología a negocios que quieren avanzar sin complicarse.</p>
+        <p>Pronto compartiremos aquí nuestra historia, el equipo y los proyectos con los que hemos trabajado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <div class="wrap">
+      <h2>Cuéntanos qué necesitas</h2>
+      <p class="intro">Escríbenos y te respondemos con ideas concretas para tu proyecto.</p>
+      <a class="btn" href="mailto:florenciobr@iconectando.online">florenciobr@iconectando.online</a>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="anio">2026</span> iconectando. Todos los derechos reservados.</footer>
+<script>document.getElementById("anio").textContent=new Date().getFullYear();</script>
 </body>
 </html>
