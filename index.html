@@ -3,239 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#17384F">
-  <meta name="description" content="iconectando integra tecnología, inteligencia artificial, automatización y conectividad para impulsar empresas.">
+  <meta name="theme-color" content="#0d2434">
+  <title>iconectando | Tecnología que conecta posibilidades</title>
+  <meta name="description" content="iconectando integra inteligencia artificial, automatización, conectividad y soluciones digitales para impulsar empresas y personas.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="iconectando">
   <meta property="og:title" content="iconectando | Tecnología que conecta posibilidades">
   <meta property="og:description" content="Soluciones tecnológicas inteligentes para conectar, simplificar y hacer crecer tu negocio.">
-  <meta property="og:image" content="logo.png">
-  <title>iconectando | Tecnología que conecta posibilidades</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --navy:#17384f;
-      --navy-deep:#0d2434;
-      --green:#74c703;
-      --green-deep:#3f8a05;
-      --teal:#4fc3b4;
-      --mist:#d2e0e0;
-      --paper:#f3f8f7;
-      --ink:#14303f;
-      --muted:#607985;
-      --line:rgba(20,48,63,.12);
-      --white:#fff;
-      --max:1160px;
-      --shadow:0 24px 70px rgba(13,36,52,.12);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:90px}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.65}
-    a{color:inherit}
-    img{display:block;max-width:100%}
-    button{font:inherit}
-    .container{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
-    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--green-deep);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-    .eyebrow:before{content:"";width:24px;height:2px;background:var(--green)}
-    h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.12;letter-spacing:-.045em;margin:0}
-    h2{font-size:clamp(2rem,4vw,3.25rem);color:var(--navy)}
-    p{margin:0}
-    .button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 23px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.94rem;transition:transform .2s,box-shadow .2s,background .2s}
-    .button:hover{transform:translateY(-3px)}
-    .button-primary{background:var(--green);color:var(--navy-deep);box-shadow:0 12px 28px rgba(116,199,3,.22)}
-    .button-primary:hover{background:#83dc08;box-shadow:0 16px 32px rgba(116,199,3,.3)}
-    .button-outline{border:1px solid rgba(255,255,255,.34);color:#fff}
-    .button-outline:hover{background:rgba(255,255,255,.08)}
-    .arrow{font-size:1.15rem;line-height:1}
-    /* Header */
-    .site-header{position:sticky;top:0;z-index:50;background:rgba(13,36,52,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.1)}
-    .nav-wrap{height:82px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:inline-flex;align-items:center;gap:11px;color:#fff;text-decoration:none;font-family:Manrope,sans-serif;font-size:1.28rem;font-weight:800;letter-spacing:-.055em}
-    .brand img{width:49px;height:49px;object-fit:contain;border-radius:50%}
-    .brand span{color:var(--green)}
-    .nav-links{display:flex;align-items:center;gap:32px}
-    .nav-links a{color:#e2eeee;text-decoration:none;font-size:.9rem;font-weight:600;transition:color .2s}
-    .nav-links a:hover{color:var(--green)}
-    .nav-links .nav-cta{padding:11px 19px;border-radius:999px;background:var(--green);color:var(--navy-deep)}
-    .nav-links .nav-cta:hover{background:#83dc08;color:var(--navy-deep)}
-    .menu-toggle{display:none;width:44px;height:44px;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:transparent;color:white;font-size:1.35rem}
-    /* Hero */
-    .hero{position:relative;overflow:hidden;background:var(--navy-deep);color:white;padding:82px 0 92px}
-    .hero:before{content:"";position:absolute;width:700px;height:700px;right:-250px;top:-360px;border:1px solid rgba(116,199,3,.22);border-radius:50%;box-shadow:0 0 0 55px rgba(116,199,3,.035),0 0 0 110px rgba(79,195,180,.035),0 0 0 165px rgba(116,199,3,.025)}
-    .hero:after{content:"";position:absolute;width:400px;height:400px;left:-260px;bottom:-280px;background:var(--green-deep);filter:blur(120px);opacity:.3}
-    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:70px}
-    .hero .eyebrow{color:#a7d77b}
-    .hero h1{max-width:720px;margin:22px 0 24px;color:white;font-size:clamp(2.8rem,5.6vw,5.25rem);font-weight:800}
-    .hero h1 em{font-style:normal;color:var(--green)}
-    .hero-copy{max-width:590px;color:#c4d5d9;font-size:1.12rem;line-height:1.8}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-    .hero-note{display:flex;align-items:center;gap:12px;margin-top:38px;color:#a9c0c8;font-size:.84rem}
-    .note-dot{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 6px rgba(79,195,180,.13)}
-    .hero-art{position:relative;display:grid;place-items:center;min-height:440px}
-    .art-ring{position:absolute;width:min(100%,430px);aspect-ratio:1;border:1px solid rgba(79,195,180,.35);border-radius:50%}
-    .art-ring:before,.art-ring:after{content:"";position:absolute;border:1px solid rgba(116,199,3,.2);border-radius:50%;inset:8%}
-    .art-ring:after{inset:17%}
-    .hero-logo{position:relative;width:min(78%,330px);aspect-ratio:1;object-fit:contain;border-radius:50%;filter:drop-shadow(0 28px 38px rgba(0,0,0,.3));animation:float 6s ease-in-out infinite}
-    .orbit-label{position:absolute;display:flex;align-items:center;gap:9px;padding:11px 15px;border:1px solid rgba(255,255,255,.15);border-radius:999px;background:rgba(23,56,79,.82);backdrop-filter:blur(8px);color:#e8f2ef;font-size:.78rem;font-weight:700;box-shadow:0 12px 28px rgba(0,0,0,.15)}
-    .orbit-label b{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--green);color:var(--navy);font-size:.9rem}
-    .label-one{top:9%;right:0}.label-two{bottom:13%;left:-2%}.label-three{bottom:3%;right:4%}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-    /* Trust strip */
-    .signal-strip{background:#fff;border-bottom:1px solid var(--line)}
-    .signal-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:25px 0}
-    .signal-intro{color:var(--muted);font-size:.88rem;font-weight:600}
-    .signal-items{display:flex;flex-wrap:wrap;gap:28px;color:var(--navy);font-size:.84rem;font-weight:800}
-    .signal-items span{display:flex;align-items:center;gap:8px}
-    .signal-items i{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}
-    /* Intro */
-    .section{padding:112px 0}
-    .section-heading{max-width:720px;margin-bottom:52px}
-    .section-heading .eyebrow{margin-bottom:18px}
-    .section-heading p{max-width:610px;margin-top:18px;color:var(--muted);font-size:1.06rem;line-height:1.8}
-    .intro-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px;align-items:start}
-    .intro-aside{padding:28px;border-left:3px solid var(--green);background:#e9f1ef;border-radius:0 18px 18px 0;color:var(--navy);font-family:Manrope,sans-serif;font-size:1.22rem;font-weight:700;line-height:1.5}
-    .intro-text{color:var(--muted);font-size:1.04rem;line-height:1.9}
-    .intro-text p+p{margin-top:18px}
-    /* Services */
-    .services-section{background:#e8f0ee}
-    .services-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:48px}
-    .services-top .section-heading{margin:0}
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .service-card{position:relative;min-height:250px;padding:30px;border:1px solid rgba(20,48,63,.08);border-radius:22px;background:#fff;box-shadow:0 10px 30px rgba(13,36,52,.035);transition:transform .25s,box-shadow .25s}
-    .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .service-icon{display:grid;place-items:center;width:54px;height:54px;margin-bottom:26px;border-radius:17px;background:#e9f5d9;color:var(--green-deep);font-size:1.45rem}
-    .service-card:nth-child(2n) .service-icon{background:#e0f3f0;color:#238c80}
-    .service-card h3{margin-bottom:12px;color:var(--navy);font-size:1.22rem}
-    .service-card p{color:var(--muted);font-size:.94rem;line-height:1.75}
-    .service-number{position:absolute;right:25px;top:25px;color:#a7b9bc;font-family:Manrope,sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.1em}
-    /* Difference */
-    .difference{background:var(--navy);color:white}
-    .difference-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .difference h2{color:white}
-    .difference .section-heading p{color:#c0d1d5}
-    .difference-list{display:grid;gap:15px}
-    .difference-item{display:flex;gap:17px;padding:21px;border:1px solid rgba(255,255,255,.13);border-radius:17px;background:rgba(255,255,255,.045)}
-    .difference-check{flex:0 0 34px;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:var(--navy-deep);font-weight:900}
-    .difference-item h3{margin:2px 0 6px;color:white;font-size:1rem;letter-spacing:-.02em}
-    .difference-item p{color:#b9cbd0;font-size:.88rem;line-height:1.65}
-    /* Process */
-    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
-    .process-step{padding-top:22px;border-top:2px solid #cbdad7}
-    .process-step .num{color:var(--green-deep);font-family:Manrope,sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.12em}
-    .process-step h3{margin:17px 0 10px;color:var(--navy);font-size:1.2rem}
-    .process-step p{color:var(--muted);font-size:.91rem;line-height:1.75}
-    /* CTA */
-    .contact-section{padding:0 0 100px}
-    .contact-panel{position:relative;overflow:hidden;padding:72px 60px;border-radius:30px;background:var(--navy-deep);color:#fff;text-align:center}
-    .contact-panel:before{content:"";position:absolute;width:350px;height:350px;right:-110px;top:-210px;border:50px solid rgba(116,199,3,.13);border-radius:50%}
-    .contact-panel:after{content:"";position:absolute;width:250px;height:250px;left:-140px;bottom:-190px;background:var(--teal);border-radius:50%;filter:blur(100px);opacity:.3}
-    .contact-content{position:relative;z-index:1;max-width:760px;margin:auto}
-    .contact-panel .eyebrow{color:#b5e28b}
-    .contact-panel h2{margin:18px auto;color:#fff;max-width:700px}
-    .contact-panel p{max-width:580px;margin:0 auto 30px;color:#c4d5d9;line-height:1.8}
-    .contact-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:13px}
-    /* Footer */
-    footer{background:#091c29;color:#a9bec5;padding:30px 0}
-    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:Manrope,sans-serif;font-weight:800;text-decoration:none}
-    .footer-brand img{width:38px;height:38px;border-radius:50%}
-    .footer-brand span{color:var(--green)}
-    .footer-copy{font-size:.82rem}
-    .footer-links{display:flex;gap:20px}
-    .footer-links a{font-size:.82rem;color:#c3d2d5;text-decoration:none}
-    .footer-links a:hover{color:var(--green)}
-    /* Reveal */
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-    .reveal.is-visible{opacity:1;transform:translateY(0)}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-    @media(max-width:900px){
-      .hero-grid{gap:25px}.hero-art{min-height:360px}.hero-logo{width:min(75%,290px)}
-      .intro-grid,.difference-grid{grid-template-columns:1fr;gap:35px}
-      .services-grid{grid-template-columns:repeat(2,1fr)}
-      .process-grid{grid-template-columns:repeat(2,1fr);row-gap:35px}
-      .signal-inner{align-items:flex-start;flex-direction:column;gap:12px}
-    }
-    @media(max-width:680px){
-      .container{width:min(var(--max),calc(100% - 36px))}
-      .nav-wrap{height:72px}.brand{font-size:1.15rem}.brand img{width:43px;height:43px}
-      .menu-toggle{display:block}
-      .nav-links{display:none;position:absolute;top:72px;left:0;right:0;padding:22px 24px 26px;background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.1);flex-direction:column;align-items:stretch;gap:18px}
-      .nav-links.open{display:flex}.nav-links .nav-cta{text-align:center}
-      .hero{padding:62px 0 65px}.hero-grid{grid-template-columns:1fr;gap:28px}
-      .hero h1{font-size:clamp(2.55rem,12vw,4rem)}.hero-copy{font-size:1rem}
-      .hero-art{min-height:320px;order:-1}.hero-logo{width:min(68%,245px)}
-      .art-ring{width:min(90%,330px)}.label-one{right:-2%;top:7%}.label-two{left:-1%;bottom:11%}.label-three{right:0;bottom:0}
-      .section{padding:78px 0}.section-heading{margin-bottom:35px}
-      .services-top{display:block}.services-grid{grid-template-columns:1fr}
-      .service-card{min-height:auto}.process-grid{grid-template-columns:1fr;gap:26px}
-      .contact-section{padding-bottom:70px}.contact-panel{padding:55px 24px;border-radius:22px}
-      .footer-inner{flex-direction:column;text-align:center}.footer-links{justify-content:center;flex-wrap:wrap}
-      .signal-items{gap:12px 20px}
-    }
-  </style>
+  <meta property="og:url" content="https://iconectando.com/">
+  <meta property="og:image" content="https://iconectando.com/assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://iconectando.com/assets/img/og-image.png">
+  <link rel="canonical" href="https://iconectando.com/">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"iconectando","email":"florenciobr@iconectando.online","url":"https://iconectando.com/","telephone":"+522228368188","logo":"https://iconectando.com/assets/img/logo.png","description":"Soluciones tecnológicas: inteligencia artificial, automatización, conectividad y marketing digital."}
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" id="header">
+    <div class="container nav">
       <a class="brand" href="#inicio" aria-label="iconectando, inicio">
-        <img src="logo.png" alt="Logotipo de iconectando">
-        <span>i<span>conectando</span></span>
+        <img src="assets/img/logo.png" alt="iconectando" width="236" height="59">
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path id="menuIcon" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
       <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
-        <a href="#soluciones">Soluciones</a>
         <a href="#nosotros">Nosotros</a>
+        <a href="#soluciones">Soluciones</a>
         <a href="#metodo">Cómo trabajamos</a>
-        <a class="nav-cta" href="#contacto">Conectemos <span class="arrow">↗</span></a>
+        <a class="nav-cta" href="#contacto">Conectemos</a>
       </nav>
     </div>
   </header>
 
-  <main id="inicio">
-    <section class="hero">
+  <main id="contenido">
+    <section class="hero" id="inicio">
       <div class="container hero-grid">
-        <div class="hero-content reveal">
+        <div class="reveal">
           <span class="eyebrow">Tecnología · Inteligencia · Conexión</span>
           <h1>Hacemos que la tecnología <em>trabaje para ti.</em></h1>
           <p class="hero-copy">Conectamos ideas, personas y herramientas para transformar la manera en que tu negocio opera, se comunica y crece.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#contacto">Hablemos de tu proyecto <span class="arrow">↗</span></a>
-            <a class="button button-outline" href="#soluciones">Explorar soluciones</a>
+            <a class="btn btn-primary" href="#contacto">Hablemos de tu proyecto
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#soluciones">Explorar soluciones</a>
           </div>
-          <div class="hero-note"><span class="note-dot"></span> Soluciones tecnológicas pensadas para personas y negocios.</div>
         </div>
-        <div class="hero-art reveal" aria-label="Logotipo de iconectando">
-          <div class="art-ring"></div>
-          <img class="hero-logo" src="logo.png" alt="Robot de iconectando rodeado de símbolos de conectividad">
-          <div class="orbit-label label-one"><b>✦</b> Inteligencia</div>
-          <div class="orbit-label label-two"><b>↗</b> Innovación</div>
-          <div class="orbit-label label-three"><b>◎</b> Conectividad</div>
+
+        <div class="hero-art reveal" style="--d:.15s">
+          <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+          <img class="hero-logo" src="assets/img/robot.png" alt="Robot de iconectando, mascota de la marca" width="460" height="462">
+          <div class="chip c1"><b><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 6.3L21 10l-6.8 1.7L12 18l-2.2-6.3L3 10l6.8-1.7z"/></svg></b>Inteligencia</div>
+          <div class="chip c2"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></b>Automatización</div>
+          <div class="chip c3"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r=".8"/></svg></b>Conectividad</div>
         </div>
       </div>
     </section>
 
-    <div class="signal-strip">
-      <div class="container signal-inner">
-        <p class="signal-intro">Unimos capacidades para impulsar tu siguiente paso.</p>
-        <div class="signal-items">
-          <span><i></i> Inteligencia artificial</span>
-          <span><i></i> Automatización</span>
-          <span><i></i> Conectividad</span>
-          <span><i></i> Soluciones digitales</span>
+    <div class="strip">
+      <div class="container strip-inner">
+        <p class="strip-label">Unimos capacidades para impulsar tu siguiente paso.</p>
+        <div class="strip-items">
+          <span><i></i>Inteligencia artificial</span>
+          <span><i></i>Automatización</span>
+          <span><i></i>Conectividad</span>
+          <span><i></i>Soluciones digitales</span>
         </div>
       </div>
     </div>
 
     <section class="section" id="nosotros">
-      <div class="container intro-grid">
-        <div class="section-heading reveal">
+      <div class="container about-grid">
+        <div class="heading reveal" style="margin:0">
           <span class="eyebrow">Conoce iconectando</span>
           <h2>La tecnología tiene más sentido cuando nos conecta.</h2>
+          <div class="pillars">
+            <div class="pillar"><strong>Cercana</strong><span>Hablamos claro y te escuchamos.</span></div>
+            <div class="pillar"><strong>Útil</strong><span>Resolvemos necesidades reales.</span></div>
+            <div class="pillar"><strong>Accesible</strong><span>Tecnología al alcance de todos.</span></div>
+          </div>
         </div>
-        <div class="reveal">
-          <div class="intro-aside">Creemos en una tecnología cercana, útil y accesible, capaz de convertir retos cotidianos en nuevas posibilidades.</div>
-          <div class="intro-text" style="margin-top:25px">
+        <div class="reveal" style="--d:.12s">
+          <div class="quote">Creemos en una tecnología cercana, útil y accesible, capaz de convertir retos cotidianos en nuevas posibilidades.</div>
+          <div class="about-text">
             <p>En iconectando acercamos soluciones tecnológicas a empresas y personas que quieren avanzar. Integramos herramientas digitales, inteligencia artificial y conectividad para simplificar procesos y mejorar experiencias.</p>
             <p>Escuchamos, entendemos cada necesidad y proponemos soluciones que se adapten a los objetivos y al momento de cada organización.</p>
           </div>
@@ -243,68 +105,113 @@
       </div>
     </section>
 
-    <section class="section services-section" id="soluciones">
+    <section class="section services" id="soluciones">
       <div class="container">
-        <div class="services-top">
-          <div class="section-heading reveal">
-            <span class="eyebrow">Lo que hacemos</span>
-            <h2>Un ecosistema de soluciones para avanzar.</h2>
-            <p>Integramos tecnología y creatividad para ayudarte a resolver necesidades reales de tu operación y comunicación.</p>
-          </div>
+        <div class="heading reveal">
+          <span class="eyebrow">Lo que hacemos</span>
+          <h2>Un ecosistema de soluciones para avanzar.</h2>
+          <p>Integramos tecnología y creatividad para ayudarte a resolver necesidades reales de tu operación y comunicación.</p>
         </div>
-        <div class="services-grid">
-          <article class="service-card reveal"><span class="service-number">01</span><div class="service-icon">✧</div><h3>Inteligencia artificial</h3><p>Aplicamos herramientas de IA para asistir a tus equipos, aprovechar información y mejorar procesos.</p></article>
-          <article class="service-card reveal"><span class="service-number">02</span><div class="service-icon">↯</div><h3>Automatización</h3><p>Conectamos aplicaciones y tareas para reducir trabajo repetitivo y dar continuidad a tus procesos.</p></article>
-          <article class="service-card reveal"><span class="service-number">03</span><div class="service-icon">◌</div><h3>Bots y asistentes virtuales</h3><p>Creamos experiencias conversacionales para atender consultas y acompañar a tus clientes.</p></article>
-          <article class="service-card reveal"><span class="service-number">04</span><div class="service-icon">⌘</div><h3>Marketing digital</h3><p>Impulsamos tu presencia digital con comunicación, contenido y estrategias para conectar con tu audiencia.</p></article>
-          <article class="service-card reveal"><span class="service-number">05</span><div class="service-icon">⌁</div><h3>Redes y conectividad</h3><p>Diseñamos soluciones de redes, infraestructura y conectividad inalámbrica para mantenerte conectado.</p></article>
-          <article class="service-card reveal"><span class="service-number">06</span><div class="service-icon">▣</div><h3>Seguridad y CCTV</h3><p>Integramos sistemas de videovigilancia y herramientas tecnológicas para supervisar tus espacios.</p></article>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-top"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><span class="num">01</span></div>
+            <h3>Inteligencia artificial</h3>
+            <p>Aplicamos herramientas de IA para asistir a tus equipos, aprovechar información y mejorar procesos.</p>
+          </article>
+          <article class="card reveal" style="--d:.08s">
+            <div class="card-top"><div class="icon"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><span class="num">02</span></div>
+            <h3>Automatización</h3>
+            <p>Conectamos aplicaciones y tareas para reducir trabajo repetitivo y dar continuidad a tus procesos.</p>
+          </article>
+          <article class="card reveal" style="--d:.16s">
+            <div class="card-top"><div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div><span class="num">03</span></div>
+            <h3>Bots y asistentes virtuales</h3>
+            <p>Creamos experiencias conversacionales para atender consultas y acompañar a tus clientes.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-top"><div class="icon"><svg viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><span class="num">04</span></div>
+            <h3>Marketing digital</h3>
+            <p>Impulsamos tu presencia digital con comunicación, contenido y estrategias para conectar con tu audiencia.</p>
+          </article>
+          <article class="card reveal" style="--d:.08s">
+            <div class="card-top"><div class="icon"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0"/><path d="M5.5 12.5a10 10 0 0 1 13 0"/><path d="M9 16a5 5 0 0 1 6 0"/><path d="M12 19.5h.01"/></svg></div><span class="num">05</span></div>
+            <h3>Redes y conectividad</h3>
+            <p>Diseñamos soluciones de redes, infraestructura y conectividad inalámbrica para mantenerte conectado.</p>
+          </article>
+          <article class="card reveal" style="--d:.16s">
+            <div class="card-top"><div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="13" height="12" rx="2"/><path d="m15 10 7-3v10l-7-3"/></svg></div><span class="num">06</span></div>
+            <h3>Seguridad y CCTV</h3>
+            <p>Integramos sistemas de videovigilancia y herramientas tecnológicas para supervisar tus espacios.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section difference">
-      <div class="container difference-grid">
-        <div class="section-heading reveal">
+      <div class="container diff-grid">
+        <div class="heading reveal" style="margin:0">
           <span class="eyebrow">Nuestra forma de conectar</span>
           <h2>Más que tecnología: soluciones con propósito.</h2>
           <p>La herramienta correcta es la que resuelve una necesidad concreta. Por eso combinamos visión tecnológica con atención cercana.</p>
         </div>
-        <div class="difference-list">
-          <article class="difference-item reveal"><span class="difference-check">✓</span><div><h3>Enfoque en tus necesidades</h3><p>Partimos de tus objetivos para proponer soluciones relevantes, no tecnología por moda.</p></div></article>
-          <article class="difference-item reveal"><span class="difference-check">✓</span><div><h3>Integración inteligente</h3><p>Buscamos que tus herramientas, sistemas y personas trabajen de manera coordinada.</p></div></article>
-          <article class="difference-item reveal"><span class="difference-check">✓</span><div><h3>Acompañamiento cercano</h3><p>Hablamos claro y te acompañamos durante la definición y puesta en marcha de cada proyecto.</p></div></article>
+        <div class="diff-list">
+          <article class="diff-item reveal">
+            <span class="check"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+            <div><h3>Enfoque en tus necesidades</h3><p>Partimos de tus objetivos para proponer soluciones relevantes, no tecnología por moda.</p></div>
+          </article>
+          <article class="diff-item reveal" style="--d:.1s">
+            <span class="check"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+            <div><h3>Integración inteligente</h3><p>Buscamos que tus herramientas, sistemas y personas trabajen de manera coordinada.</p></div>
+          </article>
+          <article class="diff-item reveal" style="--d:.2s">
+            <span class="check"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+            <div><h3>Acompañamiento cercano</h3><p>Hablamos claro y te acompañamos durante la definición y puesta en marcha de cada proyecto.</p></div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="metodo">
       <div class="container">
-        <div class="section-heading reveal">
+        <div class="heading reveal">
           <span class="eyebrow">Cómo trabajamos</span>
           <h2>Un camino claro, de la idea a la solución.</h2>
           <p>Un proceso colaborativo para entender, diseñar e implementar tecnología que aporte valor.</p>
         </div>
-        <div class="process-grid">
-          <article class="process-step reveal"><span class="num">PASO 01</span><h3>Escuchamos</h3><p>Conocemos tu contexto, tus retos y lo que quieres lograr.</p></article>
-          <article class="process-step reveal"><span class="num">PASO 02</span><h3>Diseñamos</h3><p>Definimos una propuesta adecuada a tus necesidades y prioridades.</p></article>
-          <article class="process-step reveal"><span class="num">PASO 03</span><h3>Conectamos</h3><p>Integramos e implementamos las herramientas y soluciones acordadas.</p></article>
-          <article class="process-step reveal"><span class="num">PASO 04</span><h3>Evolucionamos</h3><p>Identificamos oportunidades para optimizar y seguir creciendo.</p></article>
+        <div class="steps">
+          <article class="step reveal"><div class="dot">01</div><h3>Escuchamos</h3><p>Conocemos tu contexto, tus retos y lo que quieres lograr.</p></article>
+          <article class="step reveal" style="--d:.1s"><div class="dot">02</div><h3>Diseñamos</h3><p>Definimos una propuesta adecuada a tus necesidades y prioridades.</p></article>
+          <article class="step reveal" style="--d:.2s"><div class="dot">03</div><h3>Conectamos</h3><p>Integramos e implementamos las herramientas y soluciones acordadas.</p></article>
+          <article class="step reveal" style="--d:.3s"><div class="dot">04</div><h3>Evolucionamos</h3><p>Identificamos oportunidades para optimizar y seguir creciendo.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="contact-section" id="contacto">
+    <section class="cta" id="contacto">
       <div class="container">
-        <div class="contact-panel reveal">
-          <div class="contact-content">
-            <span class="eyebrow">El siguiente paso empieza aquí</span>
-            <h2>Conectemos tu idea con nuevas posibilidades.</h2>
-            <p>Cuéntanos qué necesitas. Nos encantará conocer tu proyecto y explorar cómo la tecnología puede ayudarte.</p>
-            <div class="contact-actions">
-              <a class="button button-primary" href="mailto:florenciobr@iconectando.online?subject=Quiero%20conocer%20iconectando">Escríbenos por correo <span class="arrow">↗</span></a>
-              <a class="button button-outline" href="#soluciones">Conocer soluciones</a>
-            </div>
+        <div class="panel reveal">
+          <span class="eyebrow">El siguiente paso empieza aquí</span>
+          <h2>Conectemos tu idea con nuevas posibilidades.</h2>
+          <p class="lead">Cuéntanos qué necesitas. Nos encantará conocer tu proyecto y explorar cómo la tecnología puede ayudarte.</p>
+          <div class="panel-actions">
+            <a class="btn btn-primary" href="https://wa.me/522228368188?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20iconectando." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Escríbenos por WhatsApp
+            </a>
+            <a class="btn btn-ghost" href="mailto:florenciobr@iconectando.online?subject=Quiero%20conocer%20iconectando">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              Enviar un correo
+            </a>
+          </div>
+          <div class="contact-meta">
+            <a href="https://wa.me/522228368188" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              +52 222 836 8188
+            </a>
+            <a href="mailto:florenciobr@iconectando.online">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              florenciobr@iconectando.online
+            </a>
           </div>
         </div>
       </div>
@@ -312,41 +219,198 @@
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <a class="footer-brand" href="#inicio"><img src="logo.png" alt=""><span>i<span>conectando</span></span></a>
-      <p class="footer-copy">© <span id="year"></span> iconectando. Todos los derechos reservados.</p>
-      <div class="footer-links"><a href="#soluciones">Soluciones</a><a href="#nosotros">Nosotros</a><a href="mailto:florenciobr@iconectando.online">Contacto</a></div>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <a class="foot-brand" href="#inicio" aria-label="iconectando, inicio"><img src="assets/img/logo-blanco.png" alt="iconectando" width="220" height="55"></a>
+          <p class="foot-about">Tecnología cercana, útil y accesible para conectar personas, ideas y negocios.</p>
+        </div>
+        <div>
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#soluciones">Soluciones</a></li>
+            <li><a href="#metodo">Cómo trabajamos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="https://wa.me/522228368188" target="_blank" rel="noopener">WhatsApp +52 222 836 8188</a></li>
+            <li><a href="mailto:florenciobr@iconectando.online">florenciobr@iconectando.online</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>© <span id="year">2026</span> iconectando. Todos los derechos reservados.</p>
+        <nav class="legal-links" aria-label="Información legal">
+          <a href="#aviso-de-privacidad" data-legal="aviso-de-privacidad">Aviso de privacidad</a>
+          <a href="#politica-de-cookies" data-legal="politica-de-cookies">Política de cookies</a>
+          <a href="#terminos-de-uso" data-legal="terminos-de-uso">Términos de uso</a>
+          <button type="button" data-cookie-prefs>Preferencias de cookies</button>
+        </nav>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const toggle = document.getElementById('menuToggle');
-    const nav = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.textContent = open ? '×' : '☰';
-    });
-    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
-    }));
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const revealItems = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {threshold: 0.12});
-      revealItems.forEach(item => observer.observe(item));
-    } else {
-      revealItems.forEach(item => item.classList.add('is-visible'));
-    }
-  </script>
+  <a class="wa-float" href="https://wa.me/522228368188?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20iconectando." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <!-- Aviso de cookies -->
+  <div class="cookie" id="cookieBanner" role="region" aria-label="Aviso de cookies" hidden>
+    <p><strong>Tu privacidad importa</strong>Este sitio solo usa almacenamiento técnico necesario para funcionar y recordar esta elección. Si algún día activamos herramientas de analítica, únicamente se cargarán si las aceptas. Más información en nuestra <a href="#politica-de-cookies" data-legal="politica-de-cookies">política de cookies</a>.</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn-sm solid" data-consent="all">Aceptar todas</button>
+      <button type="button" class="btn-sm soft" data-consent="necessary">Solo necesarias</button>
+    </div>
+  </div>
+
+  <!-- ====================== DOCUMENTOS LEGALES ====================== -->
+
+  <dialog class="legal" id="aviso-de-privacidad" aria-labelledby="t-aviso">
+    <div class="legal-head">
+      <div><h2 id="t-aviso">Aviso de privacidad</h2><small>Última actualización: 18 de noviembre de 2026</small></div>
+      <button type="button" class="legal-x" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="legal-body">
+      <h3>1. Responsable del tratamiento de tus datos</h3>
+      <p><mark class="pend">[Nombre completo o razón social del responsable]</mark>, con nombre comercial <strong>iconectando</strong> (en adelante, «iconectando»), con domicilio en <mark class="pend">[calle, número, colonia, código postal, municipio y estado]</mark>, es responsable del tratamiento de los datos personales que nos proporcionas a través del sitio <strong>iconectando.com</strong> y de los medios de contacto indicados en él, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), su reglamento y demás disposiciones aplicables.</p>
+      <p>Para cualquier asunto de privacidad puedes escribirnos a <a href="mailto:florenciobr@iconectando.online">florenciobr@iconectando.online</a> o por WhatsApp al +52 222 836 8188.</p>
+
+      <h3>2. Datos personales que tratamos</h3>
+      <p>Este sitio no cuenta con formularios ni cuentas de usuario. Recabamos datos únicamente cuando nos contactas por correo electrónico o WhatsApp, o cuando contratas nuestros servicios:</p>
+      <ul>
+        <li><strong>Identificación y contacto:</strong> nombre, correo electrónico, número de teléfono (incluido el asociado a tu cuenta de WhatsApp), nombre de tu empresa y cargo.</li>
+        <li><strong>Información de tu proyecto:</strong> lo que decidas contarnos sobre tus necesidades y los archivos que compartas con nosotros.</li>
+        <li><strong>Datos técnicos de navegación:</strong> como en cualquier sitio web, el servicio que lo aloja puede registrar tu dirección IP, el tipo de navegador y la fecha y hora de tu visita.</li>
+      </ul>
+      <p>No te solicitamos datos personales sensibles (por ejemplo, salud, origen étnico, creencias religiosas u orientación sexual) ni datos bancarios por estos medios. Te pedimos no enviarlos.</p>
+
+      <h3>3. Para qué usamos tus datos</h3>
+      <p><strong>Finalidades necesarias</strong> (sin ellas no podemos atenderte):</p>
+      <ul>
+        <li>Responder tus mensajes y solicitudes de información.</li>
+        <li>Elaborar cotizaciones y propuestas.</li>
+        <li>Prestar, dar seguimiento y facturar los servicios que contrates.</li>
+        <li>Cumplir obligaciones legales, fiscales y contractuales.</li>
+      </ul>
+      <p><strong>Finalidades adicionales</strong> (puedes negarte sin que afecte las anteriores):</p>
+      <ul>
+        <li>Enviarte información sobre servicios, novedades o promociones de iconectando.</li>
+        <li>Fines estadísticos y de mejora de nuestros servicios.</li>
+      </ul>
+      <p>Si no deseas que usemos tus datos para las finalidades adicionales, escríbenos a florenciobr@iconectando.online y lo registraremos. Al contactarnos y proporcionar tus datos, entendemos que conoces este aviso y que consientes el tratamiento para las finalidades necesarias.</p>
+
+      <h3>4. Con quién compartimos tus datos</h3>
+      <p>No vendemos tus datos personales. Solo los compartimos con proveedores que nos permiten operar (correo electrónico, WhatsApp, alojamiento del sitio y, en su caso, herramientas de gestión o facturación), que los tratan por nuestra cuenta y solo para las finalidades de este aviso, y con autoridades cuando una ley o resolución lo exija. Si llegáramos a requerir una transferencia que necesite tu consentimiento, te lo informaremos antes de realizarla.</p>
+      <p>Cuando nos escribes por WhatsApp, esa plataforma (Meta) también trata tus datos conforme a sus propios términos y aviso de privacidad. Nuestro sitio está alojado en GitHub Pages, que puede registrar datos técnicos de las visitas conforme a sus políticas.</p>
+
+      <h3>5. Tus derechos: acceso, rectificación, cancelación y oposición (ARCO)</h3>
+      <p>Tienes derecho a conocer qué datos tuyos tenemos y para qué los usamos (acceso), a corregirlos si son inexactos o están incompletos (rectificación), a pedir que los eliminemos cuando consideres que no se requieren (cancelación) y a oponerte a su uso para fines específicos (oposición). También puedes revocar tu consentimiento y limitar el uso o divulgación de tus datos.</p>
+      <p>Para ejercerlos, envía tu solicitud a <a href="mailto:florenciobr@iconectando.online">florenciobr@iconectando.online</a> indicando:</p>
+      <ul>
+        <li>Tu nombre y un medio para responderte.</li>
+        <li>Un documento que acredite tu identidad o la de tu representante.</li>
+        <li>La descripción clara de los datos y del derecho que quieres ejercer.</li>
+        <li>Cualquier elemento que nos ayude a localizar tus datos.</li>
+      </ul>
+      <p>Te daremos respuesta en los plazos que establece la ley.</p>
+
+      <h3>6. Conservación y seguridad</h3>
+      <p>Conservamos tus datos el tiempo necesario para cumplir las finalidades de este aviso y las obligaciones legales aplicables; después los eliminamos o bloqueamos de forma segura. Aplicamos medidas de seguridad administrativas, técnicas y físicas razonables para protegerlos, aunque ninguna transmisión por Internet es completamente infalible.</p>
+
+      <h3>7. Cookies y tecnologías similares</h3>
+      <p>Consulta cómo las usamos en nuestra <a href="#politica-de-cookies" data-legal="politica-de-cookies">política de cookies</a>.</p>
+
+      <h3>8. Cambios a este aviso</h3>
+      <p>Publicaremos cualquier modificación en esta sección del sitio. Si quisiéramos usar tus datos para una finalidad distinta a las aquí descritas, te lo comunicaremos y, cuando corresponda, solicitaremos de nuevo tu consentimiento.</p>
+
+      <h3>9. Autoridad en materia de datos personales</h3>
+      <p>Si consideras que tu derecho a la protección de datos personales ha sido vulnerado, puedes acudir ante la autoridad competente en la materia (actualmente, la Secretaría Anticorrupción y Buen Gobierno).</p>
+    </div>
+    <div class="legal-foot"><button type="button" class="btn-sm solid" data-close>Cerrar</button></div>
+  </dialog>
+
+  <dialog class="legal" id="politica-de-cookies" aria-labelledby="t-cookies">
+    <div class="legal-head">
+      <div><h2 id="t-cookies">Política de cookies</h2><small>Última actualización: 18 de noviembre de 2026</small></div>
+      <button type="button" class="legal-x" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="legal-body">
+      <h3>1. Qué son las cookies</h3>
+      <p>Las cookies son pequeños archivos que un sitio web guarda en tu navegador. Existen también tecnologías similares, como el almacenamiento local (<em>localStorage</em>), que sirven para recordar información entre visitas.</p>
+
+      <h3>2. Qué usa este sitio</h3>
+      <p>Este sitio no utiliza cookies de publicidad, de perfilado ni de redes sociales. Solo guarda en tu navegador un dato técnico necesario para recordar tu elección sobre este aviso:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Nombre</th><th>Tipo</th><th>Finalidad</th><th>Duración</th><th>Origen</th></tr></thead>
+          <tbody>
+            <tr><td><code>iconectando_cookies</code></td><td>Necesaria (almacenamiento local)</td><td>Recordar si aceptaste todas las cookies o solo las necesarias</td><td>12 meses</td><td>Propio</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Las tipografías del sitio se sirven desde el propio sitio, por lo que no se envían tus datos de navegación a proveedores de fuentes externos.</p>
+
+      <h3>3. Cookies de analítica</h3>
+      <p>Actualmente no usamos herramientas de analítica. Si en el futuro las activamos, solo se cargarán cuando hayas elegido «Aceptar todas», y actualizaremos esta política indicando cuáles son, para qué sirven y cuánto duran.</p>
+
+      <h3>4. Servicios de terceros a los que enlazamos</h3>
+      <p>Al hacer clic en WhatsApp o en una dirección de correo electrónico, sales de nuestro sitio hacia esos servicios, que tienen sus propias políticas de privacidad y de cookies. iconectando no controla lo que ellos almacenan.</p>
+
+      <h3>5. Cómo cambiar tu decisión</h3>
+      <ul>
+        <li>Usa el enlace <strong>«Preferencias de cookies»</strong> al pie de cualquier página de este sitio para volver a elegir.</li>
+        <li>Desde la configuración de tu navegador puedes bloquear o borrar cookies y datos del sitio en cualquier momento. Si borras los datos del sitio, te volveremos a mostrar el aviso.</li>
+      </ul>
+
+      <h3>6. Más información</h3>
+      <p>El tratamiento de datos personales se describe en nuestro <a href="#aviso-de-privacidad" data-legal="aviso-de-privacidad">aviso de privacidad</a>. Para dudas sobre esta política escríbenos a <a href="mailto:florenciobr@iconectando.online">florenciobr@iconectando.online</a>.</p>
+    </div>
+    <div class="legal-foot"><button type="button" class="btn-sm solid" data-close>Cerrar</button></div>
+  </dialog>
+
+  <dialog class="legal" id="terminos-de-uso" aria-labelledby="t-terminos">
+    <div class="legal-head">
+      <div><h2 id="t-terminos">Términos de uso</h2><small>Última actualización: 18 de noviembre de 2026</small></div>
+      <button type="button" class="legal-x" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="legal-body">
+      <h3>1. Aceptación</h3>
+      <p>Al navegar en este sitio aceptas estos términos. Si no estás de acuerdo con ellos, te pedimos no utilizarlo.</p>
+
+      <h3>2. Carácter informativo</h3>
+      <p>El contenido de este sitio es informativo y describe de forma general los servicios de iconectando. No constituye una oferta vinculante ni una promesa de resultados. Los alcances, tiempos y costos de cada proyecto se definen en una propuesta o contrato por separado.</p>
+
+      <h3>3. Propiedad intelectual</h3>
+      <p>El nombre, el logotipo, la mascota, los textos, los diseños y demás elementos de este sitio pertenecen a iconectando o se usan con autorización, y están protegidos por la legislación aplicable. No puedes copiarlos, modificarlos ni usarlos con fines comerciales sin nuestro permiso previo y por escrito.</p>
+
+      <h3>4. Uso adecuado</h3>
+      <p>Te comprometes a usar el sitio de forma lícita y a no intentar dañarlo, interferir con su funcionamiento, acceder sin autorización a sus sistemas ni usarlo para enviar contenido ilícito, engañoso o malicioso.</p>
+
+      <h3>5. Enlaces y servicios de terceros</h3>
+      <p>El sitio puede enlazar a servicios externos, como WhatsApp. No controlamos su contenido ni sus políticas y no somos responsables por su uso.</p>
+
+      <h3>6. Disponibilidad y limitación de responsabilidad</h3>
+      <p>Procuramos que la información sea correcta y que el sitio esté disponible, pero no garantizamos que no tenga errores ni interrupciones. En la medida permitida por la ley, iconectando no será responsable por daños derivados del uso del sitio o de la imposibilidad de usarlo.</p>
+
+      <h3>7. Protección de datos</h3>
+      <p>El tratamiento de tus datos personales se rige por nuestro <a href="#aviso-de-privacidad" data-legal="aviso-de-privacidad">aviso de privacidad</a> y nuestra <a href="#politica-de-cookies" data-legal="politica-de-cookies">política de cookies</a>.</p>
+
+      <h3>8. Modificaciones</h3>
+      <p>Podemos actualizar estos términos en cualquier momento. La versión vigente será la publicada en este sitio, con su fecha de actualización.</p>
+
+      <h3>9. Legislación y jurisdicción</h3>
+      <p>Estos términos se rigen por las leyes de los Estados Unidos Mexicanos. Para cualquier controversia, las partes se someten a los tribunales competentes de <mark class="pend">[ciudad y estado]</mark>, renunciando a cualquier otro fuero que pudiera corresponderles.</p>
+
+      <h3>10. Contacto</h3>
+      <p>Para cualquier duda sobre estos términos escríbenos a <a href="mailto:florenciobr@iconectando.online">florenciobr@iconectando.online</a> o por WhatsApp al +52 222 836 8188.</p>
+    </div>
+    <div class="legal-foot"><button type="button" class="btn-sm solid" data-close>Cerrar</button></div>
+  </dialog>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
