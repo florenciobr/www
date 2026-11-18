@@ -1,168 +1,352 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>iconectando | Tecnología que conecta</title>
-<meta name="description" content="iconectando: soluciones tecnológicas para conectar tu negocio con sus clientes.">
-<link rel="icon" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --marino:#17384f; --marino-hondo:#0d2434; --verde:#74c703; --verde-hondo:#3f8a05;
-  --turquesa:#4fc3b4; --gris:#d2e0e0; --papel:#f3f8f7; --texto:#14303f;
-  --max:1080px;
-}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font-family:Figtree,system-ui,sans-serif;color:var(--texto);background:var(--papel);line-height:1.65;font-size:1.0625rem}
-h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,sans-serif;line-height:1.1;letter-spacing:-.02em}
-a{color:inherit}
-header :focus-visible,.hero :focus-visible,.contacto :focus-visible{outline-color:var(--verde)}
-:focus-visible{outline:3px solid var(--marino);outline-offset:3px}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
-
-/* Cabecera */
-header{position:sticky;top:0;z-index:10;background:rgba(23,56,79,.94);backdrop-filter:blur(8px)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;padding-bottom:.6rem}
-.marca{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--papel);font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.3rem}
-.marca img{width:42px;height:42px}
-nav{display:flex;gap:1.4rem}
-nav a{color:var(--papel);text-decoration:none;font-weight:500;font-size:.98rem}
-nav a:hover{color:var(--verde)}
-
-/* Hero: facetas de cristal como en el logotipo */
-.hero{background:var(--marino);color:var(--papel);position:relative;overflow:hidden;padding:5rem 0 6rem}
-.hero::before,.hero::after{content:"";position:absolute;z-index:0}
-.hero::before{width:620px;height:620px;right:-140px;top:-120px;background:var(--verde-hondo);clip-path:polygon(50% 0,100% 38%,82% 100%,18% 100%,0 38%);opacity:.55}
-.hero::after{width:360px;height:360px;left:-100px;bottom:-140px;background:var(--turquesa);clip-path:polygon(0 0,100% 30%,60% 100%);opacity:.3}
-.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
-.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800}
-.hero p{margin-top:1.4rem;max-width:34rem;font-size:1.2rem;color:#d2e0e0}
-.botones{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
-.btn{display:inline-block;padding:.8rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;background:var(--verde);color:var(--marino);transition:transform .15s}
-.btn:hover{transform:translateY(-2px)}
-.btn.sec{background:transparent;color:var(--papel);box-shadow:inset 0 0 0 2px var(--turquesa)}
-.logo-grande{justify-self:center;width:min(100%,400px);aspect-ratio:1;filter:drop-shadow(0 0 40px rgba(116,199,3,.35));animation:entrada 1s ease-out both}
-@keyframes entrada{from{opacity:0;transform:scale(.92) rotate(-4deg)}to{opacity:1;transform:none}}
-
-/* Secciones */
-section{padding:5rem 0}
-h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;max-width:22ch}
-.intro{margin-top:1rem;max-width:40rem;color:#3d5a68}
-
-/* Servicios: bloques de ancho distinto, cada uno con el color de una faceta del logo */
-.servicios{display:grid;grid-template-columns:repeat(6,1fr);gap:1.2rem;margin-top:2.5rem}
-.servicio{padding:1.8rem;border-radius:6px 28px 6px 28px}
-.servicio h3{font-size:1.3rem;margin-bottom:.5rem}
-.servicio:nth-child(1){grid-column:span 3;background:var(--turquesa);color:var(--marino)}
-.servicio:nth-child(2){grid-column:span 3;background:var(--marino);color:var(--papel)}
-.servicio:nth-child(3){grid-column:span 2;background:var(--gris);color:var(--marino)}
-.servicio:nth-child(4){grid-column:span 2;background:var(--verde);color:var(--marino)}
-.servicio:nth-child(5){grid-column:span 2;background:var(--verde-hondo);color:var(--papel)}
-
-/* Nosotros */
-.nosotros{background:#e1ecec}
-.nosotros .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.nosotros p+p{margin-top:1rem}
-
-/* Contacto */
-.contacto{background:var(--marino);color:var(--papel);text-align:center}
-.contacto h2{margin:0 auto}
-.contacto .intro{margin:1rem auto 2rem;color:#d2e0e0}
-footer{background:#0d2434;color:#9fb7c2;text-align:center;padding:1.5rem;font-size:.9rem}
-
-@media (max-width:760px){
-  nav{gap:.9rem}
-  .hero .wrap,.nosotros .wrap{grid-template-columns:1fr}
-  .logo-grande{order:-1;width:min(70%,260px)}
-  .servicio:nth-child(n){grid-column:span 6}
-  section{padding:3.5rem 0}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}.logo-grande{animation:none}.btn{transition:none}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17384F">
+  <meta name="description" content="iconectando integra tecnología, inteligencia artificial, automatización y conectividad para impulsar empresas.">
+  <meta property="og:title" content="iconectando | Tecnología que conecta posibilidades">
+  <meta property="og:description" content="Soluciones tecnológicas inteligentes para conectar, simplificar y hacer crecer tu negocio.">
+  <meta property="og:image" content="logo.png">
+  <title>iconectando | Tecnología que conecta posibilidades</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#17384f;
+      --navy-deep:#0d2434;
+      --green:#74c703;
+      --green-deep:#3f8a05;
+      --teal:#4fc3b4;
+      --mist:#d2e0e0;
+      --paper:#f3f8f7;
+      --ink:#14303f;
+      --muted:#607985;
+      --line:rgba(20,48,63,.12);
+      --white:#fff;
+      --max:1160px;
+      --shadow:0 24px 70px rgba(13,36,52,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.65}
+    a{color:inherit}
+    img{display:block;max-width:100%}
+    button{font:inherit}
+    .container{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--green-deep);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:24px;height:2px;background:var(--green)}
+    h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.12;letter-spacing:-.045em;margin:0}
+    h2{font-size:clamp(2rem,4vw,3.25rem);color:var(--navy)}
+    p{margin:0}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 23px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.94rem;transition:transform .2s,box-shadow .2s,background .2s}
+    .button:hover{transform:translateY(-3px)}
+    .button-primary{background:var(--green);color:var(--navy-deep);box-shadow:0 12px 28px rgba(116,199,3,.22)}
+    .button-primary:hover{background:#83dc08;box-shadow:0 16px 32px rgba(116,199,3,.3)}
+    .button-outline{border:1px solid rgba(255,255,255,.34);color:#fff}
+    .button-outline:hover{background:rgba(255,255,255,.08)}
+    .arrow{font-size:1.15rem;line-height:1}
+    /* Header */
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(13,36,52,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.1)}
+    .nav-wrap{height:82px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:inline-flex;align-items:center;gap:11px;color:#fff;text-decoration:none;font-family:Manrope,sans-serif;font-size:1.28rem;font-weight:800;letter-spacing:-.055em}
+    .brand img{width:49px;height:49px;object-fit:contain;border-radius:50%}
+    .brand span{color:var(--green)}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{color:#e2eeee;text-decoration:none;font-size:.9rem;font-weight:600;transition:color .2s}
+    .nav-links a:hover{color:var(--green)}
+    .nav-links .nav-cta{padding:11px 19px;border-radius:999px;background:var(--green);color:var(--navy-deep)}
+    .nav-links .nav-cta:hover{background:#83dc08;color:var(--navy-deep)}
+    .menu-toggle{display:none;width:44px;height:44px;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:transparent;color:white;font-size:1.35rem}
+    /* Hero */
+    .hero{position:relative;overflow:hidden;background:var(--navy-deep);color:white;padding:82px 0 92px}
+    .hero:before{content:"";position:absolute;width:700px;height:700px;right:-250px;top:-360px;border:1px solid rgba(116,199,3,.22);border-radius:50%;box-shadow:0 0 0 55px rgba(116,199,3,.035),0 0 0 110px rgba(79,195,180,.035),0 0 0 165px rgba(116,199,3,.025)}
+    .hero:after{content:"";position:absolute;width:400px;height:400px;left:-260px;bottom:-280px;background:var(--green-deep);filter:blur(120px);opacity:.3}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:70px}
+    .hero .eyebrow{color:#a7d77b}
+    .hero h1{max-width:720px;margin:22px 0 24px;color:white;font-size:clamp(2.8rem,5.6vw,5.25rem);font-weight:800}
+    .hero h1 em{font-style:normal;color:var(--green)}
+    .hero-copy{max-width:590px;color:#c4d5d9;font-size:1.12rem;line-height:1.8}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+    .hero-note{display:flex;align-items:center;gap:12px;margin-top:38px;color:#a9c0c8;font-size:.84rem}
+    .note-dot{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 6px rgba(79,195,180,.13)}
+    .hero-art{position:relative;display:grid;place-items:center;min-height:440px}
+    .art-ring{position:absolute;width:min(100%,430px);aspect-ratio:1;border:1px solid rgba(79,195,180,.35);border-radius:50%}
+    .art-ring:before,.art-ring:after{content:"";position:absolute;border:1px solid rgba(116,199,3,.2);border-radius:50%;inset:8%}
+    .art-ring:after{inset:17%}
+    .hero-logo{position:relative;width:min(78%,330px);aspect-ratio:1;object-fit:contain;border-radius:50%;filter:drop-shadow(0 28px 38px rgba(0,0,0,.3));animation:float 6s ease-in-out infinite}
+    .orbit-label{position:absolute;display:flex;align-items:center;gap:9px;padding:11px 15px;border:1px solid rgba(255,255,255,.15);border-radius:999px;background:rgba(23,56,79,.82);backdrop-filter:blur(8px);color:#e8f2ef;font-size:.78rem;font-weight:700;box-shadow:0 12px 28px rgba(0,0,0,.15)}
+    .orbit-label b{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--green);color:var(--navy);font-size:.9rem}
+    .label-one{top:9%;right:0}.label-two{bottom:13%;left:-2%}.label-three{bottom:3%;right:4%}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    /* Trust strip */
+    .signal-strip{background:#fff;border-bottom:1px solid var(--line)}
+    .signal-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:25px 0}
+    .signal-intro{color:var(--muted);font-size:.88rem;font-weight:600}
+    .signal-items{display:flex;flex-wrap:wrap;gap:28px;color:var(--navy);font-size:.84rem;font-weight:800}
+    .signal-items span{display:flex;align-items:center;gap:8px}
+    .signal-items i{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}
+    /* Intro */
+    .section{padding:112px 0}
+    .section-heading{max-width:720px;margin-bottom:52px}
+    .section-heading .eyebrow{margin-bottom:18px}
+    .section-heading p{max-width:610px;margin-top:18px;color:var(--muted);font-size:1.06rem;line-height:1.8}
+    .intro-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px;align-items:start}
+    .intro-aside{padding:28px;border-left:3px solid var(--green);background:#e9f1ef;border-radius:0 18px 18px 0;color:var(--navy);font-family:Manrope,sans-serif;font-size:1.22rem;font-weight:700;line-height:1.5}
+    .intro-text{color:var(--muted);font-size:1.04rem;line-height:1.9}
+    .intro-text p+p{margin-top:18px}
+    /* Services */
+    .services-section{background:#e8f0ee}
+    .services-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:48px}
+    .services-top .section-heading{margin:0}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-card{position:relative;min-height:250px;padding:30px;border:1px solid rgba(20,48,63,.08);border-radius:22px;background:#fff;box-shadow:0 10px 30px rgba(13,36,52,.035);transition:transform .25s,box-shadow .25s}
+    .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .service-icon{display:grid;place-items:center;width:54px;height:54px;margin-bottom:26px;border-radius:17px;background:#e9f5d9;color:var(--green-deep);font-size:1.45rem}
+    .service-card:nth-child(2n) .service-icon{background:#e0f3f0;color:#238c80}
+    .service-card h3{margin-bottom:12px;color:var(--navy);font-size:1.22rem}
+    .service-card p{color:var(--muted);font-size:.94rem;line-height:1.75}
+    .service-number{position:absolute;right:25px;top:25px;color:#a7b9bc;font-family:Manrope,sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.1em}
+    /* Difference */
+    .difference{background:var(--navy);color:white}
+    .difference-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .difference h2{color:white}
+    .difference .section-heading p{color:#c0d1d5}
+    .difference-list{display:grid;gap:15px}
+    .difference-item{display:flex;gap:17px;padding:21px;border:1px solid rgba(255,255,255,.13);border-radius:17px;background:rgba(255,255,255,.045)}
+    .difference-check{flex:0 0 34px;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:var(--navy-deep);font-weight:900}
+    .difference-item h3{margin:2px 0 6px;color:white;font-size:1rem;letter-spacing:-.02em}
+    .difference-item p{color:#b9cbd0;font-size:.88rem;line-height:1.65}
+    /* Process */
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .process-step{padding-top:22px;border-top:2px solid #cbdad7}
+    .process-step .num{color:var(--green-deep);font-family:Manrope,sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.12em}
+    .process-step h3{margin:17px 0 10px;color:var(--navy);font-size:1.2rem}
+    .process-step p{color:var(--muted);font-size:.91rem;line-height:1.75}
+    /* CTA */
+    .contact-section{padding:0 0 100px}
+    .contact-panel{position:relative;overflow:hidden;padding:72px 60px;border-radius:30px;background:var(--navy-deep);color:#fff;text-align:center}
+    .contact-panel:before{content:"";position:absolute;width:350px;height:350px;right:-110px;top:-210px;border:50px solid rgba(116,199,3,.13);border-radius:50%}
+    .contact-panel:after{content:"";position:absolute;width:250px;height:250px;left:-140px;bottom:-190px;background:var(--teal);border-radius:50%;filter:blur(100px);opacity:.3}
+    .contact-content{position:relative;z-index:1;max-width:760px;margin:auto}
+    .contact-panel .eyebrow{color:#b5e28b}
+    .contact-panel h2{margin:18px auto;color:#fff;max-width:700px}
+    .contact-panel p{max-width:580px;margin:0 auto 30px;color:#c4d5d9;line-height:1.8}
+    .contact-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:13px}
+    /* Footer */
+    footer{background:#091c29;color:#a9bec5;padding:30px 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:Manrope,sans-serif;font-weight:800;text-decoration:none}
+    .footer-brand img{width:38px;height:38px;border-radius:50%}
+    .footer-brand span{color:var(--green)}
+    .footer-copy{font-size:.82rem}
+    .footer-links{display:flex;gap:20px}
+    .footer-links a{font-size:.82rem;color:#c3d2d5;text-decoration:none}
+    .footer-links a:hover{color:var(--green)}
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.is-visible{opacity:1;transform:translateY(0)}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+    @media(max-width:900px){
+      .hero-grid{gap:25px}.hero-art{min-height:360px}.hero-logo{width:min(75%,290px)}
+      .intro-grid,.difference-grid{grid-template-columns:1fr;gap:35px}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .process-grid{grid-template-columns:repeat(2,1fr);row-gap:35px}
+      .signal-inner{align-items:flex-start;flex-direction:column;gap:12px}
+    }
+    @media(max-width:680px){
+      .container{width:min(var(--max),calc(100% - 36px))}
+      .nav-wrap{height:72px}.brand{font-size:1.15rem}.brand img{width:43px;height:43px}
+      .menu-toggle{display:block}
+      .nav-links{display:none;position:absolute;top:72px;left:0;right:0;padding:22px 24px 26px;background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.1);flex-direction:column;align-items:stretch;gap:18px}
+      .nav-links.open{display:flex}.nav-links .nav-cta{text-align:center}
+      .hero{padding:62px 0 65px}.hero-grid{grid-template-columns:1fr;gap:28px}
+      .hero h1{font-size:clamp(2.55rem,12vw,4rem)}.hero-copy{font-size:1rem}
+      .hero-art{min-height:320px;order:-1}.hero-logo{width:min(68%,245px)}
+      .art-ring{width:min(90%,330px)}.label-one{right:-2%;top:7%}.label-two{left:-1%;bottom:11%}.label-three{right:0;bottom:0}
+      .section{padding:78px 0}.section-heading{margin-bottom:35px}
+      .services-top{display:block}.services-grid{grid-template-columns:1fr}
+      .service-card{min-height:auto}.process-grid{grid-template-columns:1fr;gap:26px}
+      .contact-section{padding-bottom:70px}.contact-panel{padding:55px 24px;border-radius:22px}
+      .footer-inner{flex-direction:column;text-align:center}.footer-links{justify-content:center;flex-wrap:wrap}
+      .signal-items{gap:12px 20px}
+    }
+  </style>
 </head>
 <body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="iconectando, inicio">
+        <img src="logo.png" alt="Logotipo de iconectando">
+        <span>i<span>conectando</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+        <a href="#soluciones">Soluciones</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#metodo">Cómo trabajamos</a>
+        <a class="nav-cta" href="#contacto">Conectemos <span class="arrow">↗</span></a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <div class="wrap">
-    <a class="marca" href="#inicio"><img src="logo.png" alt="">iconectando</a>
-    <nav aria-label="Principal">
-      <a href="#servicios">Servicios</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </div>
-</header>
-
-<main id="inicio">
-  <div class="hero">
-    <div class="wrap">
-      <div>
-        <h1>Tecnología que conecta tu negocio con las personas</h1>
-        <p>En iconectando creamos soluciones digitales a la medida para que tu empresa se comunique mejor, trabaje más fácil y crezca.</p>
-        <div class="botones">
-          <a class="btn" href="#contacto">Hablemos de tu proyecto</a>
-          <a class="btn sec" href="#servicios">Ver servicios</a>
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Tecnología · Inteligencia · Conexión</span>
+          <h1>Hacemos que la tecnología <em>trabaje para ti.</em></h1>
+          <p class="hero-copy">Conectamos ideas, personas y herramientas para transformar la manera en que tu negocio opera, se comunica y crece.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contacto">Hablemos de tu proyecto <span class="arrow">↗</span></a>
+            <a class="button button-outline" href="#soluciones">Explorar soluciones</a>
+          </div>
+          <div class="hero-note"><span class="note-dot"></span> Soluciones tecnológicas pensadas para personas y negocios.</div>
+        </div>
+        <div class="hero-art reveal" aria-label="Logotipo de iconectando">
+          <div class="art-ring"></div>
+          <img class="hero-logo" src="logo.png" alt="Robot de iconectando rodeado de símbolos de conectividad">
+          <div class="orbit-label label-one"><b>✦</b> Inteligencia</div>
+          <div class="orbit-label label-two"><b>↗</b> Innovación</div>
+          <div class="orbit-label label-three"><b>◎</b> Conectividad</div>
         </div>
       </div>
-      <img class="logo-grande" src="logo.png" alt="Logotipo de iconectando: un robot sonriente de cristales azules y verdes rodeado de íconos de conexión">
-    </div>
-  </div>
+    </section>
 
-  <section id="servicios">
-    <div class="wrap">
-      <h2>Lo que hacemos por tu empresa</h2>
-      <p class="intro">Estas son áreas de ejemplo; las ajustaremos a tus servicios reales.</p>
-      <div class="servicios">
-        <article class="servicio">
-          <h3>Sitios y aplicaciones web</h3>
-          <p>Páginas rápidas y claras que presentan tu empresa y atraen clientes.</p>
-        </article>
-        <article class="servicio">
-          <h3>Automatización e inteligencia artificial</h3>
-          <p>Asistentes y procesos automáticos que ahorran tiempo a tu equipo.</p>
-        </article>
-        <article class="servicio">
-          <h3>Chatbots</h3>
-          <p>Atención a clientes en cualquier momento, por web o mensajería.</p>
-        </article>
-        <article class="servicio">
-          <h3>Integración de sistemas</h3>
-          <p>Conectamos las herramientas que ya usas para que trabajen juntas.</p>
-        </article>
-        <article class="servicio">
-          <h3>Asesoría tecnológica</h3>
-          <p>Te ayudamos a elegir la tecnología adecuada para tu etapa.</p>
-        </article>
+    <div class="signal-strip">
+      <div class="container signal-inner">
+        <p class="signal-intro">Unimos capacidades para impulsar tu siguiente paso.</p>
+        <div class="signal-items">
+          <span><i></i> Inteligencia artificial</span>
+          <span><i></i> Automatización</span>
+          <span><i></i> Conectividad</span>
+          <span><i></i> Soluciones digitales</span>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section id="nosotros" class="nosotros">
-    <div class="wrap">
-      <h2>Una empresa tecnológica con trato cercano</h2>
-      <div>
-        <p>iconectando nace para acercar la tecnología a negocios que quieren avanzar sin complicarse.</p>
-        <p>Pronto compartiremos aquí nuestra historia, el equipo y los proyectos con los que hemos trabajado.</p>
+    <section class="section" id="nosotros">
+      <div class="container intro-grid">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Conoce iconectando</span>
+          <h2>La tecnología tiene más sentido cuando nos conecta.</h2>
+        </div>
+        <div class="reveal">
+          <div class="intro-aside">Creemos en una tecnología cercana, útil y accesible, capaz de convertir retos cotidianos en nuevas posibilidades.</div>
+          <div class="intro-text" style="margin-top:25px">
+            <p>En iconectando acercamos soluciones tecnológicas a empresas y personas que quieren avanzar. Integramos herramientas digitales, inteligencia artificial y conectividad para simplificar procesos y mejorar experiencias.</p>
+            <p>Escuchamos, entendemos cada necesidad y proponemos soluciones que se adapten a los objetivos y al momento de cada organización.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contacto" class="contacto">
-    <div class="wrap">
-      <h2>Cuéntanos qué necesitas</h2>
-      <p class="intro">Escríbenos y te respondemos con ideas concretas para tu proyecto.</p>
-      <a class="btn" href="mailto:florenciobr@iconectando.online">florenciobr@iconectando.online</a>
-    </div>
-  </section>
-</main>
+    <section class="section services-section" id="soluciones">
+      <div class="container">
+        <div class="services-top">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Lo que hacemos</span>
+            <h2>Un ecosistema de soluciones para avanzar.</h2>
+            <p>Integramos tecnología y creatividad para ayudarte a resolver necesidades reales de tu operación y comunicación.</p>
+          </div>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal"><span class="service-number">01</span><div class="service-icon">✧</div><h3>Inteligencia artificial</h3><p>Aplicamos herramientas de IA para asistir a tus equipos, aprovechar información y mejorar procesos.</p></article>
+          <article class="service-card reveal"><span class="service-number">02</span><div class="service-icon">↯</div><h3>Automatización</h3><p>Conectamos aplicaciones y tareas para reducir trabajo repetitivo y dar continuidad a tus procesos.</p></article>
+          <article class="service-card reveal"><span class="service-number">03</span><div class="service-icon">◌</div><h3>Bots y asistentes virtuales</h3><p>Creamos experiencias conversacionales para atender consultas y acompañar a tus clientes.</p></article>
+          <article class="service-card reveal"><span class="service-number">04</span><div class="service-icon">⌘</div><h3>Marketing digital</h3><p>Impulsamos tu presencia digital con comunicación, contenido y estrategias para conectar con tu audiencia.</p></article>
+          <article class="service-card reveal"><span class="service-number">05</span><div class="service-icon">⌁</div><h3>Redes y conectividad</h3><p>Diseñamos soluciones de redes, infraestructura y conectividad inalámbrica para mantenerte conectado.</p></article>
+          <article class="service-card reveal"><span class="service-number">06</span><div class="service-icon">▣</div><h3>Seguridad y CCTV</h3><p>Integramos sistemas de videovigilancia y herramientas tecnológicas para supervisar tus espacios.</p></article>
+        </div>
+      </div>
+    </section>
 
-<footer>© <span id="anio">2026</span> iconectando. Todos los derechos reservados.</footer>
-<script>document.getElementById("anio").textContent=new Date().getFullYear();</script>
+    <section class="section difference">
+      <div class="container difference-grid">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Nuestra forma de conectar</span>
+          <h2>Más que tecnología: soluciones con propósito.</h2>
+          <p>La herramienta correcta es la que resuelve una necesidad concreta. Por eso combinamos visión tecnológica con atención cercana.</p>
+        </div>
+        <div class="difference-list">
+          <article class="difference-item reveal"><span class="difference-check">✓</span><div><h3>Enfoque en tus necesidades</h3><p>Partimos de tus objetivos para proponer soluciones relevantes, no tecnología por moda.</p></div></article>
+          <article class="difference-item reveal"><span class="difference-check">✓</span><div><h3>Integración inteligente</h3><p>Buscamos que tus herramientas, sistemas y personas trabajen de manera coordinada.</p></div></article>
+          <article class="difference-item reveal"><span class="difference-check">✓</span><div><h3>Acompañamiento cercano</h3><p>Hablamos claro y te acompañamos durante la definición y puesta en marcha de cada proyecto.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="metodo">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Cómo trabajamos</span>
+          <h2>Un camino claro, de la idea a la solución.</h2>
+          <p>Un proceso colaborativo para entender, diseñar e implementar tecnología que aporte valor.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step reveal"><span class="num">PASO 01</span><h3>Escuchamos</h3><p>Conocemos tu contexto, tus retos y lo que quieres lograr.</p></article>
+          <article class="process-step reveal"><span class="num">PASO 02</span><h3>Diseñamos</h3><p>Definimos una propuesta adecuada a tus necesidades y prioridades.</p></article>
+          <article class="process-step reveal"><span class="num">PASO 03</span><h3>Conectamos</h3><p>Integramos e implementamos las herramientas y soluciones acordadas.</p></article>
+          <article class="process-step reveal"><span class="num">PASO 04</span><h3>Evolucionamos</h3><p>Identificamos oportunidades para optimizar y seguir creciendo.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div class="contact-content">
+            <span class="eyebrow">El siguiente paso empieza aquí</span>
+            <h2>Conectemos tu idea con nuevas posibilidades.</h2>
+            <p>Cuéntanos qué necesitas. Nos encantará conocer tu proyecto y explorar cómo la tecnología puede ayudarte.</p>
+            <div class="contact-actions">
+              <a class="button button-primary" href="mailto:florenciobr@iconectando.online?subject=Quiero%20conocer%20iconectando">Escríbenos por correo <span class="arrow">↗</span></a>
+              <a class="button button-outline" href="#soluciones">Conocer soluciones</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="footer-brand" href="#inicio"><img src="logo.png" alt=""><span>i<span>conectando</span></span></a>
+      <p class="footer-copy">© <span id="year"></span> iconectando. Todos los derechos reservados.</p>
+      <div class="footer-links"><a href="#soluciones">Soluciones</a><a href="#nosotros">Nosotros</a><a href="mailto:florenciobr@iconectando.online">Contacto</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.12});
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('is-visible'));
+    }
+  </script>
 </body>
 </html>
